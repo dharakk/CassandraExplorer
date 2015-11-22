@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Cassandra Explorer</title>
+ 
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel = "stylesheet" type="text/css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+ 
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" ><a href="keyspops">Home</a></li>
+                    <li role="presentation"><a href="listkeysp">Keyspace</a>
+                   
+                </ul>
+            </nav>
+            <h3 class="text-muted">Cassandra Explorer</h3>
+        </div>
+ 
+ 
+        <form class="form-horizontal" action="query" method="Post">
+            <fieldset>
+
+            <!-- Form Name -->
+            <legend>{{colfam}}</legend>
+            <!-- Button -->
+            
+            {% set x = 1%}
+            {% for col in cols %}
+            <!-- Multiple Checkboxes -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="checkboxes"></label>
+              <div class="col-md-4">
+              <div class="checkbox">
+                <label for="checkboxes-0">
+                  <input name={{"checkboxes"+x|string}} id={{"checkboxes"+x|string}} value={{col}} type="checkbox">
+                  {{col}}
+                </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="textinput">like</label>  
+              <div class="col-md-4">
+              <input id={{"textinput"+x|string}} name={{"textinput"+x|string}} placeholder="value" class="form-control input-md" type="text">
+                
+              </div>
+            </div>
+            {% set x = x+1 %}
+            {%endfor%}
+            
+
+            <div class="form-group">
+              <div class="col-md-4">
+                <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
+              </div>
+            </div>
+
+            </fieldset>
+        </form>
+        <footer class="footer">
+            <p>&copy; Company 2015</p>
+        </footer>
+ 
+    </div>
+</body>
+ 
+</html>

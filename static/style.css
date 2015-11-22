@@ -1,0 +1,29 @@
+table {
+        width: 100%;
+    }
+
+thead, tbody, tr, td, th { display: block; }
+
+tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+
+
+tbody {
+    height: 500px;
+    overflow: auto;
+}
+
+thead {
+    /* fallback */
+}
+
+
+tbody td, thead th {
+    
+    float: left;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Python Flask Bucket List App</title>
+ 
+ 
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+ 
+    
+    <link href="{{ url_for('static', filename='style.css') }}" rel = "stylesheet" type="text/css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                   <li role="presentation" ><a href="keyspops">Home</a></li>
+                    <li role="presentation"><a href="listkeysp">Keyspace</a>
+                   
+                </ul>
+            </nav>
+            <h3 class="text-muted">Cassandra Explorer</h3>
+        </div>
+
+  
+        <br/><br/><br/><br/>
+        <div >
+            <div >
+                <div >
+                    <h4>
+                        {{colfam}} 
+                    </h4>
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            {% for i in ths %}
+                                <th>{{ i }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in rows %}
+                        <tr>
+                            {%for col in row %}
+                          <td >{{col}}</td>
+                            {% endfor %}
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>  
+         <footer class="footer">
+            <p>&copy; Company 2015</p>
+        </footer>
+    </div>
+
+   
+</body>
+ 
+</html>

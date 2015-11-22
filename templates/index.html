@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Python Flask Bucket List App</title>
+ 
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+ 
+ 
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" ><a href="keyspops">Home</a></li>
+                    <li role="presentation"><a href="listkeysp">Keyspace</a>
+                </ul>
+            </nav>
+            
+        </div>
+ 
+        <div class="jumbotron">
+            <h1>Cassandra Explorer</h1>
+            <p class="lead"></p>
+            <form class="form-horizontal" action="cexplore/try_connect" method="Post">
+            <fieldset>
+
+            <!-- Form Name -->
+            <legend>Enter Cluster address:</legend>
+            <!-- Button -->
+            
+            
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="textinput">Cluster IP:</label>  
+              <div class="col-md-4">
+              <input id="textinput" name="textinput" placeholder="value" class="form-control input-md" type="text">
+                
+              </div>
+            </div>
+            
+            
+
+            <div class="form-group">
+              <div class="col-md-4">
+                <button id="singlebutton" name="singlebutton" class="btn btn-primary">Connect</button>
+              </div>
+            </div>
+
+            </fieldset>
+        </form>
+        </div>
+ 
+        
+        <footer class="footer">
+            <p>&copy; Company 2015</p>
+        </footer>
+ 
+    </div>
+</body>
+ 
+</html>
